@@ -4,7 +4,9 @@ function MainPage() {
   return (
     <div>
       <h1>Hello</h1>
-      <img src={myImage} />
+      <div className="img-container">
+        <img src={myImage} />
+      </div>
     </div>
   );
 }
