@@ -48,3 +48,31 @@ margin-left: auto;
 margin-right: auto;
   width: 500px;
 }
+
+@keyframes movingSnake {
+0%{
+  transform: translateX(400px);
+}
+
+}
+
+.breaker .snake-animation{
+    animation: movingSnake 5s linear forwards infinite alternate-reverse ;
+    height: 100px;
+    
+    transform: translateX(-400px);
+}
+
+.breaker{
+
+  width: 100%;
+  background-color: blue;
+  height: 100px;
+}
+
+
+.snake-animation{
+
+  height: 100px;
+ 
+}

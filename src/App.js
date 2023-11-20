@@ -2,7 +2,7 @@ import "./App.css";
 import MainPage from "./Project/MainPage";
 import Banner from "./Project/Banner";
 import Register from "./Project/Register";
-import { BrowserRouter as Router, Route, Link } from "react-browser-router";
+import { BrowserRouter as Router, Route } from "react-browser-router";
 import TestingAPI from "./Project/TestingAPI";
 
 function App() {
