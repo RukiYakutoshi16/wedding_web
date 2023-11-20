@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/wedding_web/static/css/main.b11d14a6.css",
+    "main.js": "/wedding_web/static/js/main.cc932150.js",
+    "static/js/787.b444d40d.chunk.js": "/wedding_web/static/js/787.b444d40d.chunk.js",
+    "static/media/HollyAndTrung.jpg": "/wedding_web/static/media/HollyAndTrung.aa6535fda6bdf102e76e.jpg",
+    "static/media/Snake.jpg": "/wedding_web/static/media/Snake.9f828a44c166b1e8223b.jpg",
+    "index.html": "/wedding_web/index.html",
+    "main.b11d14a6.css.map": "/wedding_web/static/css/main.b11d14a6.css.map",
+    "main.cc932150.js.map": "/wedding_web/static/js/main.cc932150.js.map",
+    "787.b444d40d.chunk.js.map": "/wedding_web/static/js/787.b444d40d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b11d14a6.css",
+    "static/js/main.cc932150.js"
+  ]
+}
