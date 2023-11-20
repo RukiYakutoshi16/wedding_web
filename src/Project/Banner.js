@@ -10,10 +10,10 @@ const Banner = () => {
           <div className="container">
             <div className="row">
               <div className="col-sm">
-                <a href="#">Home</a>
+                <a href="/Main">Home</a>
               </div>
               <div className="col-sm">
-                <a href="#">Register</a>
+                <a href="/Register">Register</a>
               </div>
             </div>
           </div>
