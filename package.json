@@ -9,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "gh-pages": "^6.1.0",
+    "kill-port": "^2.0.1",
     "react": "^16.13.0",
     "react-browser-router": "^2.1.2",
     "react-dom": "^16.14.0",
