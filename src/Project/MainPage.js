@@ -4,11 +4,39 @@ import AboutUs from "./AboutUs";
 function MainPage() {
   return (
     <div>
-      <h1>Welcome</h1>
-      <h1>Trung and Holl Wedding Special</h1>
-      <div className="img-container">
-        <img src={myImage} />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm">
+            <div className="img-container">
+              <img src={myImage} />
+            </div>
+          </div>
+
+          <div className="col-sm">
+            <p className="wedding-title">Welcome</p>
+            <hr />
+            <h1>Trung and Holl's wedding</h1>
+            <div>
+              <h1>About Us</h1>
+              <a>
+                I like crab rangoon I like crab rangoon I like crab rangoon I
+                like crab rangoon I like crab rangoon I like crab rangoon I like
+                crab rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
       <AboutUs />
     </div>
   );

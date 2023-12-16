@@ -40,13 +40,13 @@
 img{
   height: auto;
   max-width: 100%;
-  padding: 20px;
+ 
 }
 
 .img-container{
-margin-left: auto;
-margin-right: auto;
-  width: 500px;
+padding:0;
+margin:0;
+  width: 100%
 }
 
 @keyframes movingSnake {
@@ -75,4 +75,14 @@ margin-right: auto;
 
   height: 100px;
  
+}
+
+
+.wedding-title{
+  font-family: "Alex Brush";
+  font-size: 100px;
+}
+
+.backdrop{
+  background-image: linear-gradient(to left,pink, red);
 }

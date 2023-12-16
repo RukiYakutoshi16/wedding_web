@@ -7,7 +7,7 @@ import TestingAPI from "./Project/TestingAPI";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App backdrop">
       <Banner />
 
       <Router>
