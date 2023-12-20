@@ -5,8 +5,8 @@ let guest = {
   LastName: "",
 };
 
-const INSERT = "/InsertUser";
-const GETUSERS = "/GetUsers";
+const INSERT = " http://127.0.0.1:8080/InsertUser";
+const GETUSERS = " http://127.0.0.1:8080/Users";
 
 const Register = () => {
   let [myGuest, setMyGuest] = useState(guest);
@@ -29,7 +29,18 @@ const Register = () => {
     setMyGuest(_guest);
   };
 
-  let getUsers = async () => {};
+  let getUsers = async (e) => {
+    e.preventDefault();
+    try {
+      let response = await fetch(GETUSERS, {
+        "Access-Control-Allow-Origin": "no-cors",
+      });
+      let data = await response.json();
+      console.log(data);
+    } catch {
+      console.log("can't get users");
+    }
+  };
 
   let onSubmit = async (e) => {
     e.preventDefault();
@@ -38,8 +49,8 @@ const Register = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          server: "Kestrel",
-          "Access-Control-Allow-Origin": "*",
+          server: "http://127.0.0.1",
+          "Access-Control-Allow-Origin": "no-cors",
         },
         body: JSON.stringify(myGuest),
       });
@@ -63,7 +74,7 @@ const Register = () => {
           <label>Last Name</label>
           <input onChange={setLastName} type="text"></input>
         </div>
-        <input onClick={getUsers} type="button" value="Check Regiters" />
+        <input onClick={getUsers} type="button" value="Check Registers" />
         <input type="submit" value="Submit" />
       </form>
     </div>
