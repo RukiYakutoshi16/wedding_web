@@ -4,12 +4,14 @@ let guest = {
   FirstName: "",
   LastName: "",
 };
-
-const INSERT = " http://127.0.0.1:8080/InsertUser";
-const GETUSERS = " http://127.0.0.1:8080/Users";
+const HOSTSERVER = "http://76.255.146.193:8080";
+const INSERT = HOSTSERVER + "/InsertUser";
+const GETUSERS = HOSTSERVER + "/Users";
 
 const Register = () => {
+  let [isRegistered, setIsRegistered] = useState(false);
   let [myGuest, setMyGuest] = useState(guest);
+  let [messageConfirm, setMessageConfirm] = useState("message");
 
   let setFirstName = (e) => {
     let value = e.target.value;
@@ -33,12 +35,14 @@ const Register = () => {
     e.preventDefault();
     try {
       let response = await fetch(GETUSERS, {
-        "Access-Control-Allow-Origin": "no-cors",
+        method: "GET",
       });
       let data = await response.json();
       console.log(data);
+      //setMessageConfirm(data);
     } catch {
       console.log("can't get users");
+      setMessageConfirm("can't get users");
     }
   };
 
@@ -49,34 +53,40 @@ const Register = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          server: "http://127.0.0.1",
-          "Access-Control-Allow-Origin": "no-cors",
+          server: HOSTSERVER,
         },
         body: JSON.stringify(myGuest),
       });
-    } catch {
+      setMessageConfirm("submit is good: " + JSON.stringify(myGuest));
+      setIsRegistered(true);
+    } catch (e) {
       console.log("can't submit");
+      setMessageConfirm("can't submit " + e);
     }
   };
 
   return (
     <div>
       <h1>Register Here</h1>
-      <form onSubmit={onSubmit}>
-        <div>
-          {" "}
-          <label>First Name</label>
-          <input onChange={setFirstName} type="text"></input>
-        </div>
+      {!isRegistered && (
+        <form onSubmit={onSubmit}>
+          <div>
+            {" "}
+            <label>First Name</label>
+            <input onChange={setFirstName} type="text"></input>
+          </div>
 
-        <div>
-          {" "}
-          <label>Last Name</label>
-          <input onChange={setLastName} type="text"></input>
-        </div>
-        <input onClick={getUsers} type="button" value="Check Registers" />
-        <input type="submit" value="Submit" />
-      </form>
+          <div>
+            {" "}
+            <label>Last Name</label>
+            <input onChange={setLastName} type="text"></input>
+          </div>
+
+          <input type="submit" value="Submit" />
+        </form>
+      )}
+      <input onClick={getUsers} type="button" value="Check Registers" />
+      <a>{messageConfirm}</a>
     </div>
   );
 };

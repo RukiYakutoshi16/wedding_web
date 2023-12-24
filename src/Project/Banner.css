@@ -3,3 +3,23 @@
     width: 100%;
     
 }
+
+.wedding-banner{
+    font-family: "Alex Brush";
+    font-size: 100px;
+    padding: 0px;
+    margin:0px;
+    color:white;
+
+  }
+  
+  .header-font{
+    font-family:'Times New Roman', Times, serif;
+    padding:2px;
+  color:white;
+  }
+  
+  a{
+    color:inherit;
+    text-decoration: none;
+  }

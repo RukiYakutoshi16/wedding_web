@@ -1,5 +1,6 @@
 import myImage from "../img/HollyAndTrung.jpg";
 import AboutUs from "./AboutUs";
+import "./MainPage.css";
 
 function MainPage() {
   return (
@@ -15,13 +16,12 @@ function MainPage() {
           <div className="col-sm">
             <p className="wedding-title">Welcome</p>
             <hr />
-            <h1>Trung and Holl's wedding</h1>
+
             <div>
               <h1>About Us</h1>
-              <a>
-                I like crab rangoon I like crab rangoon I like crab rangoon I
-                like crab rangoon I like crab rangoon I like crab rangoon I like
-                crab rangoon I like crab rangoon I like crab rangoon I like crab
+
+              <a className="description">
+                WWEEE I like crab rangoon I like crab rangoon I like crab
                 rangoon I like crab rangoon I like crab rangoon I like crab
                 rangoon I like crab rangoon I like crab rangoon I like crab
                 rangoon I like crab rangoon I like crab rangoon I like crab
@@ -30,7 +30,9 @@ function MainPage() {
                 rangoon I like crab rangoon I like crab rangoon I like crab
                 rangoon I like crab rangoon I like crab rangoon I like crab
                 rangoon I like crab rangoon I like crab rangoon I like crab
-                rangoon
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon I like crab rangoon I like crab
+                rangoon I like crab rangoon
               </a>
             </div>
           </div>

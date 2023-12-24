@@ -8,12 +8,20 @@ const Banner = () => {
       <nav className="navbar navbar-expand-lg navbar-light navigation">
         <div className="navbar-collapse column">
           <div className="container">
+            <div>
+              <h1 className="wedding-banner">Trung & Holl</h1>
+            </div>
             <div className="row">
-              <div className="col-sm">
-                <a href="/Main">Home</a>
+              <div className="col header-font">
+                <a href="/Main">
+                  {" "}
+                  <i className="fa-solid fa-house"></i>HOME
+                </a>
               </div>
-              <div className="col-sm">
-                <a href="/Register">Register</a>
+              <div className="col header-font">
+                <a href="/Register">
+                  <i className="fa-solid fa-pen-to-square"></i>REGISTER
+                </a>
               </div>
             </div>
           </div>

@@ -78,11 +78,10 @@ margin:0;
 }
 
 
-.wedding-title{
-  font-family: "Alex Brush";
-  font-size: 100px;
-}
+
+
 
 .backdrop{
-  background-image: linear-gradient(to left,pink, red);
+  background: red;
 }
+
