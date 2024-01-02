@@ -9,14 +9,14 @@
     font-size: 100px;
     padding: 0px;
     margin:0px;
-    color:white;
+    color:rgb(250, 246, 44);
 
   }
   
   .header-font{
     font-family:'Times New Roman', Times, serif;
     padding:2px;
-  color:white;
+  color:rgb(250, 246, 44);
   }
   
   a{

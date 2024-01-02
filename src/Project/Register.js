@@ -1,32 +1,45 @@
 import { useState } from "react";
+import "./Register.css";
 
 let guest = {
-  FirstName: "",
-  LastName: "",
+  FullName: "",
+  Email: "",
+  IsBringingExtra: false,
 };
 const HOSTSERVER = "http://76.255.146.193:8080";
-const INSERT = HOSTSERVER + "/InsertUser";
-const GETUSERS = HOSTSERVER + "/Users";
+const LOCALHOST = "https://localhost:7070";
+const INSERT = LOCALHOST + "/InsertUser";
+const GETUSERS = LOCALHOST + "/Users";
 
 const Register = () => {
   let [isRegistered, setIsRegistered] = useState(false);
   let [myGuest, setMyGuest] = useState(guest);
   let [messageConfirm, setMessageConfirm] = useState("message");
 
-  let setFirstName = (e) => {
+  let setFullName = (e) => {
     let value = e.target.value;
     let _guest = {
       ...myGuest,
-      FirstName: value,
+      FullName: value,
     };
     setMyGuest(_guest);
   };
 
-  let setLastName = (e) => {
+  let setEmail = (e) => {
     let value = e.target.value;
     let _guest = {
       ...myGuest,
-      LastName: value,
+      Email: value,
+    };
+    setMyGuest(_guest);
+  };
+
+  let setIsBringingExtra = (e) => {
+    let value = e.target.checked;
+
+    let _guest = {
+      ...myGuest,
+      IsBringingExtra: value,
     };
     setMyGuest(_guest);
   };
@@ -53,7 +66,7 @@ const Register = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          server: HOSTSERVER,
+          server: LOCALHOST,
         },
         body: JSON.stringify(myGuest),
       });
@@ -70,16 +83,31 @@ const Register = () => {
       <h1>Register Here</h1>
       {!isRegistered && (
         <form onSubmit={onSubmit}>
-          <div>
-            {" "}
-            <label>First Name</label>
-            <input onChange={setFirstName} type="text"></input>
-          </div>
-
-          <div>
-            {" "}
-            <label>Last Name</label>
-            <input onChange={setLastName} type="text"></input>
+          <div className="container">
+            <div className="row">
+              {" "}
+              <div className="fill-in col">
+                {" "}
+                <label className="col-sm">Full Name</label>{" "}
+                <input
+                  className="col-sm"
+                  onChange={setFullName}
+                  type="text"
+                ></input>
+              </div>
+              <div className="fill-in">
+                <label className="col-sm">Email</label>{" "}
+                <input
+                  className="col-sm"
+                  onChange={setEmail}
+                  type="text"
+                ></input>
+              </div>
+              <div>
+                <label>Bringing Extra Person?</label>{" "}
+                <input onChange={setIsBringingExtra} type="checkbox"></input>
+              </div>
+            </div>
           </div>
 
           <input type="submit" value="Submit" />
