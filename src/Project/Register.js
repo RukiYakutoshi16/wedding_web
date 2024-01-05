@@ -4,8 +4,10 @@ import "./Register.css";
 let guest = {
   FullName: "",
   Email: "",
-  IsBringingExtra: false,
+  IsBringingExtra: 0,
 };
+
+const admin = false;
 const HOSTSERVER = "http://76.255.146.193:8080";
 const LOCALHOST = "https://localhost:7070";
 const INSERT = LOCALHOST + "/InsertUser";
@@ -35,7 +37,7 @@ const Register = () => {
   };
 
   let setIsBringingExtra = (e) => {
-    let value = e.target.checked;
+    let value = e.target.checked ? 1 : 0;
 
     let _guest = {
       ...myGuest,
@@ -84,28 +86,43 @@ const Register = () => {
       {!isRegistered && (
         <form onSubmit={onSubmit}>
           <div className="container">
+            <div className="row no-gutters ">
+              {" "}
+              <div className="fill-in col-sm text-sm-end">
+                {" "}
+                <label>Full Name</label>{" "}
+              </div>
+              <div className="fill-in col-sm ">
+                {" "}
+                <input className="" onChange={setFullName} type="text"></input>
+              </div>
+            </div>
             <div className="row">
               {" "}
-              <div className="fill-in col">
-                {" "}
-                <label className="col-sm">Full Name</label>{" "}
-                <input
-                  className="col-sm"
-                  onChange={setFullName}
-                  type="text"
-                ></input>
+              <div className="fill-in col-sm text-sm-end">
+                <label>Email</label>{" "}
               </div>
-              <div className="fill-in">
-                <label className="col-sm">Email</label>{" "}
+              <div className="fill-in col-sm">
+                {" "}
                 <input
                   className="col-sm"
                   onChange={setEmail}
                   type="text"
                 ></input>
               </div>
-              <div>
+            </div>
+            <div className="row">
+              <div className="fill-in col-sm text-sm-end">
+                {" "}
                 <label>Bringing Extra Person?</label>{" "}
-                <input onChange={setIsBringingExtra} type="checkbox"></input>
+              </div>
+              <div className="fill-in col-sm ">
+                {" "}
+                <input
+                  className="checkbox-size"
+                  onChange={setIsBringingExtra}
+                  type="checkbox"
+                ></input>
               </div>
             </div>
           </div>
@@ -113,8 +130,12 @@ const Register = () => {
           <input type="submit" value="Submit" />
         </form>
       )}
-      <input onClick={getUsers} type="button" value="Check Registers" />
-      <a>{messageConfirm}</a>
+      {admin && (
+        <div>
+          <input onClick={getUsers} type="button" value="Check Registers" />
+          <a>{messageConfirm}</a>
+        </div>
+      )}
     </div>
   );
 };

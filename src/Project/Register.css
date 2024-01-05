@@ -1,12 +1,55 @@
 
 .fill-in{
 
-    padding:5px;
+    padding:10px;
 
   }
 
-  label {
-    text-align:right;
+
+
+ label, h1 {
+   
     font-family:'Times New Roman', Times, serif;
     color:rgb(250, 246, 44);
+    
+
   }
+
+  .checkbox-size{
+   
+    transform:scale(1.5);
+    margin-top: 5px;
+  }
+
+  .no-gutters{
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @media only screen and (min-width: 574px) {
+    .fill-in label{
+      font-size: medium;
+      text-align: right;
+     
+       
+      
+     }
+     .fill-in input{
+      
+       float:left;
+     }
+  }
+  
+    
+
+  @media only screen and (max-width: 574px) {
+    .fill-in input{
+      
+     
+    }
+    label{
+     font-size: larger;
+    }
+    
+    /* CSS that should be displayed if width is equal to or less than 991px and larger 
+     than 768px goes here */
+   }
